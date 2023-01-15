@@ -3,13 +3,13 @@
     <div class="navbar">
       <div class="nav-left">TECHUP</div>
       <div class="nav-center">
-        <div>Explore</div>
-        <div>Discover</div>
-        <div>About</div>
+        <div class="nav-item">Explore</div>
+        <div class="nav-item">Discover</div>
+        <div class="nav-item">About</div>
       </div>
       <div class="nav-right">
-        <div>Sign up</div>
-        <div>Login</div>
+        <div class="nav-item">Sign up</div>
+        <div class="nav-item">Login</div>
       </div>
     </div>
     <div class="landing-page-text">
@@ -43,6 +43,31 @@ export default {
 </script>
 
 <style scoped>
+.nav-item::before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #fb770d;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-item:hover::before {
+  width: 100%;
+}
+
+.nav-item:hover {
+  color: white;
+}
+
+.nav-item {
+  text-decoration: none;
+  position: relative;
+  cursor: pointer;
+}
+
 .navbar {
   position: fixed;
   display: flex;
