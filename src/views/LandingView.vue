@@ -1,10 +1,7 @@
 <template>
-  <!-- <div> -->
-  <!-- <LogIn />
-    <JobContainer /> -->
   <div class="home">
-    <!-- <div class="navbar">
-      <div class="nav-left">logo</div>
+    <div class="navbar">
+      <div class="nav-left">TECHUP</div>
       <div class="nav-center">
         <div>Explore</div>
         <div>Discover</div>
@@ -14,7 +11,7 @@
         <div>Sign up</div>
         <div>Login</div>
       </div>
-    </div> -->
+    </div>
     <div class="landing-page-text">
       <h1><b>TECHUP</b></h1>
       <p>
@@ -32,7 +29,6 @@
       src="../assets/techfest landing page pic 1.png"
     />
   </div>
-  <!-- </div> -->
 </template>
 
 <script>
@@ -61,8 +57,10 @@ export default {
 }
 
 .nav-right {
+  width: 10%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
+  gap: 10px;
 }
 
 button {
