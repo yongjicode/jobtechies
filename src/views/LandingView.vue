@@ -77,6 +77,12 @@ button {
   background-color: transparent;
 }
 
+button:hover {
+  border: 1px solid #fb770d;
+  color: #fb770d;
+  background-color: white;
+}
+
 .button1 {
   background-color: #25424c;
   border: 1px solid #25424c;
