@@ -3,7 +3,7 @@
   <!-- <LogIn />
     <JobContainer /> -->
   <div class="home">
-    <div class="navbar">
+    <!-- <div class="navbar">
       <div class="nav-left">logo</div>
       <div class="nav-center">
         <div>Explore</div>
@@ -14,7 +14,7 @@
         <div>Sign up</div>
         <div>Login</div>
       </div>
-    </div>
+    </div> -->
     <div class="landing-page-text">
       <h1><b>TECHUP</b></h1>
       <p>
