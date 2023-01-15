@@ -1,11 +1,13 @@
 <template>
   <div id="app">
     <nav>
+      <router-link to="/landing">Landing</router-link>
       <router-link to="/">Home</router-link>
       <router-link to="/about">About</router-link>
     </nav>
-    <router-view />
-    <b-button variant="danger">BUTTON</b-button>
+    <div align="center">
+      <router-view style="max-width: 90%" />
+    </div>
   </div>
 </template>
 
