@@ -41,7 +41,7 @@
 // import LogIn from "@/components/LogIn.vue";
 
 export default {
-  name: "HomeView",
+  name: "LandingView",
   // components: { JobContainer, LogIn },
 };
 </script>
