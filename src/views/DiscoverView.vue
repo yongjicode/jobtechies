@@ -1,6 +1,7 @@
 <template>
   <div class="jobrole">
     <h3 class="mt-5" align="left">Your Recommended Career Tracks:</h3>
+    <router-link to="/discover/job/description">Nested Page One</router-link>
     <div>
       <b-card-group deck>
         <JobRole
