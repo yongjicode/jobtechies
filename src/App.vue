@@ -2,8 +2,10 @@
   <div id="app">
     <nav>
       <router-link to="/landing">Landing</router-link>
-      <router-link to="/">Home</router-link>
-      <router-link to="/about">About</router-link>
+      <router-link to="/discover">Discover</router-link>
+      <router-link to="/explore">Explore</router-link>
+      <router-link to="/mentor">Mentor</router-link>
+      <router-link to="/resume">Resume</router-link>
     </nav>
     <div>
       <router-view style="max-width: 100%" />
