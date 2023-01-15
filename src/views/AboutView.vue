@@ -3,7 +3,7 @@
     <h3 class="mt-5" align="left">Your Recommended Career Tracks:</h3>
     <div>
       <b-card-group deck>
-        <JobRole
+        <!-- <JobRole
           job="Software Engineer"
           track="Software and Applications"
           description="A software engineer sits and code"
@@ -37,7 +37,7 @@
           job="Cyber Engineer"
           track="Cyber Security"
           description="A cyber engineer sits and protects computers"
-        />
+        /> -->
       </b-card-group>
     </div>
   </div>
@@ -45,12 +45,12 @@
 
 <script>
 // @ is an alias to /src
-import JobRole from "@/components/JobRole.vue";
+// import JobRole from "@/components/JobRole.vue";
 
 export default {
   name: "AboutView",
-  components: {
-    JobRole,
-  },
+  // components: {
+  //   JobRole,
+  // },
 };
 </script>
