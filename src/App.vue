@@ -13,7 +13,7 @@
 </template>
 
 <style>
-@import "~bootstrap/dist/css/bootstrap.css";
+/* @import "~bootstrap/dist/css/bootstrap.css";
 @import url("https://jthemes.net/themes/html/wizard-form/documentation/images/favicon.ico");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css");
 @import "~bootstrap/dist/css/font-awesome.min.css";
@@ -21,7 +21,7 @@
 @import "~bootstrap/dist/css/animate1.css";
 @import "~bootstrap/dist/css/fontawesome-all.css";
 @import "~bootstrap/dist/css/style8.css";
-@import "~bootstrap/dist/css/switch1.css";
+@import "~bootstrap/dist/css/switch1.css"; */
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
