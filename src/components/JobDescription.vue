@@ -1,8 +1,9 @@
 <template>
   <div class="explore">
+    <h4>Industry demand for {{ type }}</h4>
     <b-card
       no-body
-      style="max-width: 100%"
+      style="max-width: 100%; border: none"
       img-src="https://kinsta.com/wp-content/uploads/2022/11/Enterprise-software-revenue.png"
       img-alt="Image"
       img-top
@@ -11,7 +12,7 @@
         <b-list-group-item>{{ current.trend }}</b-list-group-item>
       </b-list-group>
       <b-card-body>
-        <b-card-title>{{ type }}</b-card-title>
+        <b-card-title>What does a {{ type }} do?</b-card-title>
         <b-card-text>
           {{ current.description }}
         </b-card-text>

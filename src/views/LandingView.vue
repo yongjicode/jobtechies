@@ -1,17 +1,5 @@
 <template>
   <div class="home">
-    <div class="navbar">
-      <div class="nav-left">TECHUP</div>
-      <div class="nav-center">
-        <div class="nav-item">Explore</div>
-        <div class="nav-item">Discover</div>
-        <div class="nav-item">About</div>
-      </div>
-      <div class="nav-right">
-        <div class="nav-item">Sign up</div>
-        <div class="nav-item">Login</div>
-      </div>
-    </div>
     <div class="landing-page-text">
       <h1><b>TECHUP</b></h1>
       <p>
