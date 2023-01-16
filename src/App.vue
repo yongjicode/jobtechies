@@ -24,8 +24,8 @@
 </template>
 
 <style>
-@import "~bootstrap/dist/css/bootstrap.css";
-/* @import url("https://jthemes.net/themes/html/wizard-form/documentation/images/favicon.ico");
+/* @import "~bootstrap/dist/css/bootstrap.css";
+@import url("https://jthemes.net/themes/html/wizard-form/documentation/images/favicon.ico");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css");
 @import "~bootstrap/dist/css/font-awesome.min.css";
 @import "~bootstrap/dist/css/stroke.css";
