@@ -1,0 +1,547 @@
+{
+    "data":[
+ {
+   "Track": "Strategy and Governance",
+   "Role": "Program Director"
+ },
+ {
+   "Track": "Strategy and Governance",
+   "Role": "UX Designer"
+ },
+ {
+   "Track": "Strategy and Governance",
+   "Role": "Business Architect"
+ },
+ {
+   "Track": "Strategy and Governance",
+   "Role": "IT Auditor"
+ },
+ {
+   "Track": "Strategy and Governance",
+   "Role": "Program Manager"
+ },
+ {
+   "Track": "Strategy and Governance",
+   "Role": "Quality Engineer"
+ },
+ {
+   "Track": "Strategy and Governance",
+   "Role": "Business Analyst-AI Translator"
+ },
+ {
+   "Track": "Strategy and Governance",
+   "Role": "Head of Quality"
+ },
+ {
+   "Track": "Strategy and Governance",
+   "Role": "Associate UX Designer"
+ },
+ {
+   "Track": "Strategy and Governance",
+   "Role": "Quality Assurance Engineer"
+ },
+ {
+   "Track": "Strategy and Governance",
+   "Role": "Lead UX Designer"
+ },
+ {
+   "Track": "Strategy and Governance",
+   "Role": "Quality Assurance Manager"
+ },
+ {
+   "Track": "Strategy and Governance",
+   "Role": "IT Audit Manager"
+ },
+ {
+   "Track": "Strategy and Governance",
+   "Role": "Associate Business Analyst"
+ },
+ {
+   "Track": "Strategy and Governance",
+   "Role": "Project Manager Scrum Master"
+ },
+ {
+   "Track": "Strategy and Governance",
+   "Role": "Data Protection Officer"
+ },
+ {
+   "Track": "Strategy and Governance",
+   "Role": "Head of Product"
+ },
+ {
+   "Track": "Strategy and Governance",
+   "Role": "Senior Product Manager"
+ },
+ {
+   "Track": "Strategy and Governance",
+   "Role": "Enterprise Architect"
+ },
+ {
+   "Track": "Strategy and Governance",
+   "Role": "Head of IT Audit"
+ },
+ {
+   "Track": "Strategy and Governance",
+   "Role": "Data Protection Executive"
+ },
+ {
+   "Track": "Strategy and Governance",
+   "Role": "Quality Engineering Manager"
+ },
+ {
+   "Track": "Strategy and Governance",
+   "Role": "Solutions Architect"
+ },
+ {
+   "Track": "Strategy and Governance",
+   "Role": "Group Data Protection Officer"
+ },
+ {
+   "Track": "Strategy and Governance",
+   "Role": "Product Manager"
+ },
+ {
+   "Track": "Infrastructure",
+   "Role": "Associate Network Engineer"
+ },
+ {
+   "Track": "Infrastructure",
+   "Role": "Infrastructure Engineer"
+ },
+ {
+   "Track": "Infrastructure",
+   "Role": "Associate Radio Frequency Engineer"
+ },
+ {
+   "Track": "Infrastructure",
+   "Role": "Radio Frequency Engineer"
+ },
+ {
+   "Track": "Infrastructure",
+   "Role": "Network Engineer"
+ },
+ {
+   "Track": "Infrastructure",
+   "Role": "Infrastructure Engineering Manager"
+ },
+ {
+   "Track": "Infrastructure",
+   "Role": "Infrastructure Architect"
+ },
+ {
+   "Track": "Infrastructure",
+   "Role": "Automation and Orchestration Engineer"
+ },
+ {
+   "Track": "Infrastructure",
+   "Role": "SysOps Engineer"
+ },
+ {
+   "Track": "Infrastructure",
+   "Role": "Associate Infrastructure Engineer"
+ },
+ {
+   "Track": "Infrastructure",
+   "Role": "Head of Infrastructure"
+ },
+ {
+   "Track": "Software and Applications",
+   "Role": "Lead UI Designer"
+ },
+ {
+   "Track": "Software and Applications",
+   "Role": "Head of Software Engineering"
+ },
+ {
+   "Track": "Software and Applications",
+   "Role": "Software Engineering Manager"
+ },
+ {
+   "Track": "Software and Applications",
+   "Role": "Software Engineer"
+ },
+ {
+   "Track": "Software and Applications",
+   "Role": "Embedded Systems Engineer"
+ },
+ {
+   "Track": "Software and Applications",
+   "Role": "UI Designer"
+ },
+ {
+   "Track": "Software and Applications",
+   "Role": "Associate UI Designer"
+ },
+ {
+   "Track": "Software and Applications",
+   "Role": "Associate Software Engineer"
+ },
+ {
+   "Track": "Software and Applications",
+   "Role": "Software Architect"
+ },
+ {
+   "Track": "Software and Applications",
+   "Role": "Associate Embedded Systems Engineer"
+ },
+ {
+   "Track": "Software and Applications",
+   "Role": "Embedded Systems Engineering Manager"
+ },
+ {
+   "Track": "Software and Applications",
+   "Role": "DevOps Engineer"
+ },
+ {
+   "Track": "Data and AI",
+   "Role": "Data AI Scientist"
+ },
+ {
+   "Track": "Data and AI",
+   "Role": "BI Manager"
+ },
+ {
+   "Track": "Data and AI",
+   "Role": "Data Architect"
+ },
+ {
+   "Track": "Data and AI",
+   "Role": "Head of Data Science AI"
+ },
+ {
+   "Track": "Data and AI",
+   "Role": "CDO CDAIO"
+ },
+ {
+   "Track": "Data and AI",
+   "Role": "Data Engineer"
+ },
+ {
+   "Track": "Data and AI",
+   "Role": "AI ML Engineer"
+ },
+ {
+   "Track": "Data and AI",
+   "Role": "Senior AI ML Engineer(GSC Top 5)"
+ },
+ {
+   "Track": "Data and AI",
+   "Role": "AI Applied Researcher"
+ },
+ {
+   "Track": "Data and AI",
+   "Role": "Data Analyst Associate Data Engineer"
+ },
+ {
+   "Track": "Data and AI",
+   "Role": "Senior Data Engineer"
+ },
+ {
+   "Track": "Data and AI",
+   "Role": "BI Director"
+ },
+ {
+   "Track": "Operations and Support",
+   "Role": "Associate Applications Support Engineer"
+ },
+ {
+   "Track": "Operations and Support",
+   "Role": "Data Centre Operations Engineer"
+ },
+ {
+   "Track": "Operations and Support",
+   "Role": "Infrastructure Support Engineer"
+ },
+ {
+   "Track": "Operations and Support",
+   "Role": "Operations Centre Support Engineer"
+ },
+ {
+   "Track": "Operations and Support",
+   "Role": "Associate Database Support Engineer"
+ },
+ {
+   "Track": "Operations and Support",
+   "Role": "Associate Data Centre Operations Engineer"
+ },
+ {
+   "Track": "Operations and Support",
+   "Role": "Associate Infrastructure Support Engineer"
+ },
+ {
+   "Track": "Operations and Support",
+   "Role": "Operations and Support Manager"
+ },
+ {
+   "Track": "Operations and Support",
+   "Role": "Head of Operations and Support"
+ },
+ {
+   "Track": "Operations and Support",
+   "Role": "Associate Systems Support Engineer"
+ },
+ {
+   "Track": "Operations and Support",
+   "Role": "Associate Operations Centre Support Engineer"
+ },
+ {
+   "Track": "Operations and Support",
+   "Role": "Applications Support Engineer"
+ },
+ {
+   "Track": "Operations and Support",
+   "Role": "Systems Support Engineer"
+ },
+ {
+   "Track": "Operations and Support",
+   "Role": "Database Support Engineer"
+ },
+ {
+   "Track": "Cyber Security",
+   "Role": "VAPT Analyst"
+ },
+ {
+   "Track": "Cyber Security",
+   "Role": "VAPT Manager"
+ },
+ {
+   "Track": "Cyber Security",
+   "Role": "Cyber Risk Analyst"
+ },
+ {
+   "Track": "Cyber Security",
+   "Role": "Security Operations Manager"
+ },
+ {
+   "Track": "Cyber Security",
+   "Role": "Security Architect"
+ },
+ {
+   "Track": "Cyber Security",
+   "Role": "Security Operations Analyst"
+ },
+ {
+   "Track": "Cyber Security",
+   "Role": "Cyber Risk Manager"
+ },
+ {
+   "Track": "Cyber Security",
+   "Role": "Threat Analysis Manager"
+ },
+ {
+   "Track": "Cyber Security",
+   "Role": "Forensics Investigatior"
+ },
+ {
+   "Track": "Cyber Security",
+   "Role": "Forensics Investigation Manager"
+ },
+ {
+   "Track": "Cyber Security",
+   "Role": "Associate Security Analyst"
+ },
+ {
+   "Track": "Cyber Security",
+   "Role": "Incident Investigator"
+ },
+ {
+   "Track": "Cyber Security",
+   "Role": "Incident Investigation Manager"
+ },
+ {
+   "Track": "Cyber Security",
+   "Role": "Senior Security Engineer"
+ },
+ {
+   "Track": "Cyber Security",
+   "Role": "CISO"
+ },
+ {
+   "Track": "Sales and Marketing",
+   "Role": "Pre-Sales Consultant"
+ },
+ {
+   "Track": "Sales and Marketing",
+   "Role": "Sales Director"
+ },
+ {
+   "Track": "Sales and Marketing",
+   "Role": "Marketing Manager"
+ },
+ {
+   "Track": "Sales and Marketing",
+   "Role": "Sales Account Manager"
+ },
+ {
+   "Track": "Sales and Marketing",
+   "Role": "Customer Success Director"
+ },
+ {
+   "Track": "Sales and Marketing",
+   "Role": "Marketing Director"
+ },
+ {
+   "Track": "Sales and Marketing",
+   "Role": "Business Development Manager"
+ },
+ {
+   "Track": "Sales and Marketing",
+   "Role": "Marketing Executive"
+ },
+ {
+   "Track": "Sales and Marketing",
+   "Role": "Sales Executive"
+ },
+ {
+   "Track": "Sales and Marketing",
+   "Role": "Customer Success Manager"
+ },
+ {
+   "Track": "Sales and Marketing",
+   "Role": "Pre-Sales Director"
+ },
+ {
+   "Track": "Sales and Marketing",
+   "Role": "Head of Sales"
+ },
+ {
+   "Track": "Sales and Marketing",
+   "Role": "Channel Sales Manager"
+ },
+ {
+   "Track": "Product Development",
+   "Role": "Software Architect"
+ },
+ {
+   "Track": "Product Development",
+   "Role": "Head of Software Engineering"
+ },
+ {
+   "Track": "Product Development",
+   "Role": "Chief Technology Officer"
+ },
+ {
+   "Track": "Product Development",
+   "Role": "Product Security Engineer"
+ },
+ {
+   "Track": "Product Development",
+   "Role": "Lead Product Designer"
+ },
+ {
+   "Track": "Product Development",
+   "Role": "Lead Product Manager"
+ },
+ {
+   "Track": "Product Development",
+   "Role": "Product Designer"
+ },
+ {
+   "Track": "Product Development",
+   "Role": "Site Reliability Engineer"
+ },
+ {
+   "Track": "Product Development",
+   "Role": "Software Engineering Manager"
+ },
+ {
+   "Track": "Product Development",
+   "Role": "Quality Engineer"
+ },
+ {
+   "Track": "Product Development",
+   "Role": "Full Stack Developer"
+ },
+ {
+   "Track": "Product Development",
+   "Role": "Back End Developer"
+ },
+ {
+   "Track": "Product Development",
+   "Role": "Quality Engineering Manager"
+ },
+ {
+   "Track": "Product Development",
+   "Role": "Site Reliability Engineering Manager"
+ },
+ {
+   "Track": "Product Development",
+   "Role": "Product Risk Analyst"
+ },
+ {
+   "Track": "Product Development",
+   "Role": "Senior Front End Developer"
+ },
+ {
+   "Track": "Product Development",
+   "Role": "Head of Product"
+ },
+ {
+   "Track": "Product Development",
+   "Role": "Quality Assurance Engineer"
+ },
+ {
+   "Track": "Product Development",
+   "Role": "Product Analyst"
+ },
+ {
+   "Track": "Product Development",
+   "Role": "Chief Product Officer"
+ },
+ {
+   "Track": "Product Development",
+   "Role": "Senior Back End Developer"
+ },
+ {
+   "Track": "Product Development",
+   "Role": "Front End Developer"
+ },
+ {
+   "Track": "Product Development",
+   "Role": "Associate Product Analyst"
+ },
+ {
+   "Track": "Product Development",
+   "Role": "Head of Quality & Risk"
+ },
+ {
+   "Track": "Product Development",
+   "Role": "Lead Product Analyst"
+ },
+ {
+   "Track": "Product Development",
+   "Role": "Senior Full Stack Developer"
+ },
+ {
+   "Track": "Product Development",
+   "Role": "Head of Product Analytics"
+ },
+ {
+   "Track": "Product Development",
+   "Role": "Associate Product Manager"
+ },
+ {
+   "Track": "Product Development",
+   "Role": "Associate Product Designer"
+ },
+ {
+   "Track": "Product Development",
+   "Role": "Quality Assurance Manager"
+ },
+ {
+   "Track": "Product Development",
+   "Role": "Product Security Engineering Manager"
+ },
+ {
+   "Track": "Product Development",
+   "Role": "Head of Product Design"
+ },
+ {
+   "Track": "Product Development",
+   "Role": "Product Manager"
+ },
+ {
+   "Track": "Product Development",
+   "Role": "Product Risk Manager"
+ }]
+}
