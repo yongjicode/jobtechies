@@ -20,7 +20,9 @@
       </p>
       <div class="buttons">
         <button class="button1">Get Started</button>
-        <button class="button2" href="/login">Login</button>
+        <router-link to="/signin">
+          <button class="button2" href="/login">Login</button>
+        </router-link>
       </div>
     </div>
     <img

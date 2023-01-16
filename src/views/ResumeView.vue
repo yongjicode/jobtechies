@@ -379,9 +379,11 @@
       </b-form-group>
 
       <b-form-group>
-        <b-button type="submit" variant="warning" style="float: right"
-          >Confirm</b-button
-        >
+        <router-link to="/discover">
+          <b-button type="submit" variant="warning" style="float: right"
+            >Confirm</b-button
+          >
+        </router-link>
       </b-form-group>
     </b-form>
   </b-container>

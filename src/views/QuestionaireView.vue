@@ -1,625 +1,783 @@
 <template>
-  <div>
-    <div v-for="(question, index) in filteredQuestions" :key="index">
-      <h3>{{ question.text }}</h3>
-      <div v-for="(option, optionIndex) in question.options" :key="optionIndex">
-        <input
-          type="radio"
-          :value="option"
-          :name="question.id"
-          v-model="userAnswers[question.id]"
-        />
-        {{ option }}
-      </div>
+  <div class="wrapper clearfix">
+    <div class="wizard-part-title">
+      <h3></h3>
     </div>
-    <div>
-      <button @click="previousPage" :disabled="currentPage === 0">
-        Previous
-      </button>
-      <button
-        @click="nextPage"
-        :disabled="currentPage === questions.length - 1"
-      >
-        Next
-      </button>
-      <p>Page {{ currentPage + 1 }} of {{ questions.length }}</p>
-    </div>
-    <div class="wrapper">
-      <div class="steps-area steps-area-fixed">
-        <div class="image-holder">
-          <img src="https://placekitten.com/380/200" alt="" />
-        </div>
-        <div class="steps clearfix">
-          <ul class="tablist multisteps-form__progress">
-            <li class="multisteps-form__progress-btn js-active current">
-              <span>1</span>
-            </li>
-            <li class="multisteps-form__progress-btn">
-              <span>2</span>
-            </li>
-            <li class="multisteps-form__progress-btn">
-              <span>3</span>
-            </li>
-            <li class="multisteps-form__progress-btn">
-              <span>4</span>
-            </li>
-            <li class="multisteps-form__progress-btn last">
-              <span>5</span>
-            </li>
-          </ul>
+    <!--multisteps-form-->
+    <div class="multisteps-form">
+      <!--progress bar-->
+      <div class="row">
+        <div class="col-12 col-lg-12 ml-auto mr-auto mb-0 mt-0">
+          <div class="multisteps-form__progress" style="padding: 0 0 0 0"></div>
         </div>
       </div>
-      <form class="multisteps-form__form" action="#" id="wizard" method="POST">
-        <div class="form-area position-relative">
-          <!-- div 1 -->
-          <div
-            class="multisteps-form__panel js-active"
-            data-animation="slideHorz"
+      <!--form panels-->
+      <div class="row">
+        <div class="col-12 col-lg-12 m-auto">
+          <form
+            class="multisteps-form__form clearfix"
+            action="#"
+            method="post"
+            id="wizard"
           >
-            <div class="wizard-forms">
-              <div class="inner pb-100 clearfix">
-                <div class="form-content pera-content">
-                  <div class="step-inner-content">
-                    <span class="step-no">Step 1</span>
-                    <h2>What kind of Services You need?</h2>
-                    <p>
-                      Tation argumentum et usu, dicit viderer evertitur te has.
-                      Eu dictas concludaturque usu, facete detracto patrioque an
-                      per, lucilius pertinacia eu vel.
-                    </p>
-                    <div class="step-box">
-                      <div class="row">
-                        <div class="col-md-4">
-                          <label
-                            class="step-box-content bg-white text-center relative-position active"
-                          >
-                            <span class="step-box-icon">
-                              <img
-                                src="https://placekitten.com/380/200"
-                                alt=""
-                              />
-                            </span>
-                            <span class="step-box-text">
-                              Corporate Services
-                            </span>
-                            <span class="service-check-option">
-                              <span
-                                ><input
-                                  type="radio"
-                                  name="service_name"
-                                  value="Corporate Services"
-                                  checked=""
-                              /></span>
-                            </span>
-                          </label>
-                        </div>
-                        <div class="col-md-4">
-                          <label
-                            class="step-box-content bg-white text-center relative-position"
-                          >
-                            <span class="step-box-icon">
-                              <img
-                                src="https://placekitten.com/380/200"
-                                alt=""
-                              />
-                            </span>
-                            <span class="step-box-text">
-                              Freelancing Serivces
-                            </span>
-                            <span>conditional</span>
-                            <span class="service-check-option">
-                              <span
-                                ><input
-                                  id="condition1"
-                                  type="radio"
-                                  name="service_name"
-                                  value="Freelancing Services"
-                              /></span>
-                            </span>
-                          </label>
-                        </div>
-                        <div class="col-md-4">
-                          <label
-                            class="step-box-content bg-white text-center relative-position"
-                          >
-                            <span class="step-box-icon">
-                              <img
-                                src="https://placekitten.com/380/200"
-                                alt=""
-                              />
-                            </span>
-                            <span class="step-box-text"> Development </span>
-                            <span class="service-check-option">
-                              <span
-                                ><input
-                                  type="radio"
-                                  name="service_name"
-                                  value="Development Services"
-                              /></span>
-                            </span>
-                          </label>
-                        </div>
-                      </div>
-                      <div
-                        class="row conditional"
-                        data-condition="#condition1 && service_name == 'Freelancing Services'"
-                      >
-                        <div class="col-md-12 form-inner-area">
-                          <label for="field"><h3>Which Sector</h3></label>
-                          <input
-                            type="text"
-                            name="field"
-                            class="form-control"
-                            minlength="2"
-                            placeholder="Write Here"
-                          />
-                        </div>
-                      </div>
+            <!--single form panel-->
+            <div
+              class="multisteps-form__panel js-active"
+              data-animation="slideVert"
+              v-if="currentPage === 0"
+            >
+              <div class="inner pb-100">
+                <div class="wizard-topper">
+                  <div class="wizard-progress">
+                    <span>1 of 5 Completed</span>
+                    <div class="progress">
+                      <div class="progress-bar"></div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <!-- /.inner -->
-              <div class="actions">
-                <ul>
-                  <li class="disable" aria-disabled="true">
-                    <span class="js-btn-next" title="NEXT"
-                      >Backward <i class="fa fa-arrow-right"></i
-                    ></span>
-                  </li>
-                  <li>
-                    <span class="js-btn-next" title="NEXT"
-                      >NEXT <i class="fa fa-arrow-right"></i
-                    ></span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <!-- div 2 -->
-          <div class="multisteps-form__panel" data-animation="slideHorz">
-            <div class="wizard-forms">
-              <div class="inner pb-100 clearfix">
-                <div class="form-content pera-content">
-                  <div class="step-inner-content">
-                    <span class="step-no bottom-line">Step 2</span>
-                    <div class="step-progress float-right">
-                      <span>2 of 5 completed</span>
-                      <div class="step-progress-bar">
-                        <div class="progress">
-                          <div class="progress-bar"></div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <h2>What kind of services you are quiz?</h2>
-                    <p>
-                      Tation argumentum et usu, dicit viderer evertitur te has.
-                      Eu dictas concludaturque usu, facete detracto patrioque an
-                      per, lucilius pertinacia eu vel.
-                    </p>
-
-                    <div class="form-inner-area">
-                      <input
-                        type="text"
-                        name="full_name"
-                        class="form-control required"
-                        minlength="2"
-                        placeholder="First and last name *"
-                        required=""
-                      />
-                      <input
-                        type="email"
-                        name="email"
-                        class="form-control required"
-                        placeholder="Email Address *"
-                        required=""
-                      />
-                      <input type="text" name="phone" placeholder="Phone" />
-                    </div>
-                    <div class="gender-selection">
-                      <h3>Gender:</h3>
-                      <label>
-                        <input type="radio" name="gender" value="Male" />
-                        <span class="checkmark"></span>Male
-                      </label>
-                      <label>
-                        <input type="radio" name="gender" value="Female" />
-                        <span class="checkmark"></span>Female
-                      </label>
-                    </div>
-                    <div class="upload-documents">
-                      <h3>Upload Documents:</h3>
-                      <div class="upload-araa bg-white">
-                        <input
-                          type="hidden"
-                          value=""
-                          name="fileContent"
-                          id="fileContent"
-                        />
-                        <input
-                          type="hidden"
-                          value=""
-                          name="filename"
-                          id="filename"
-                        />
-                        <div class="upload-icon float-left">
-                          <i class="fas fa-cloud-upload-alt"></i>
-                        </div>
-                        <div class="upload-text">
-                          <span
-                            >( File accepted: pdf. doc/ docx - Max file size :
-                            150kb for demo limit )</span
-                          >
-                        </div>
-                        <div class="upload-option text-center">
-                          <label for="attach">Upload The Documents</label>
-                          <input
-                            id="attach"
-                            style="visibility: hidden"
-                            type="file"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                <div class="wizard-content-item text-center">
+                  <p>Your friends would describe you as …</p>
                 </div>
-              </div>
-              <!-- /.inner -->
-              <div class="actions">
-                <ul>
-                  <li>
-                    <span class="js-btn-prev" title="BACK"
-                      ><i class="fa fa-arrow-left"></i> BACK
-                    </span>
-                  </li>
-                  <li>
-                    <span class="js-btn-next" title="NEXT"
-                      >NEXT <i class="fa fa-arrow-right"></i
-                    ></span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <!-- div 3 -->
-          <div class="multisteps-form__panel" data-animation="slideHorz">
-            <div class="wizard-forms">
-              <div class="inner pb-100 clearfix">
-                <div class="form-content pera-content">
-                  <div class="step-inner-content">
-                    <span class="step-no bottom-line">Step 3</span>
-                    <div class="step-progress float-right">
-                      <span>3 of 5 completed</span>
-                      <div class="step-progress-bar">
-                        <div class="progress">
-                          <div class="progress-bar" style="width: 40%"></div>
-                        </div>
-                      </div>
-                    </div>
-                    <h2>What kind of services You Need</h2>
-                    <p>
-                      Tation argumentum et usu, dicit viderer evertitur te has.
-                      Eu dictas concludaturque usu, facete detracto patrioque an
-                      per, lucilius pertinacia eu vel.
-                    </p>
-                    <div class="services-select-option">
+                <div class="wizard-content-form">
+                  <div class="wizard-form-field">
+                    <div class="identity-option wizard-content-form">
                       <ul>
-                        <li class="bg-white active">
-                          <label
-                            >Web Design
+                        <li>
+                          <label>
                             <input
-                              type="radio"
-                              id="condition2"
-                              name="web_service"
-                              value="Web Design"
-                              checked=""
-                          /></label>
+                              type="checkbox"
+                              class="identity-check"
+                              checked="checked"
+                            />
+                            <span class="identity-label"></span>Skeptical
+                            <span class="checkmark-border"></span>
+                          </label>
                         </li>
-                        <li class="bg-white">
-                          <label
-                            >Web Development
-                            <input
-                              type="radio"
-                              name="web_service"
-                              value="Web Development"
-                          /></label>
+                        <li>
+                          <label>
+                            <input type="checkbox" class="identity-check" />
+                            <span class="identity-label"></span>Empathetic
+                            <span class="checkmark-border"></span>
+                          </label>
                         </li>
-                        <li class="bg-white">
-                          <label
-                            >Graphics Design
-                            <input
-                              type="radio"
-                              name="web_service"
-                              value="Graphics Design"
-                          /></label>
+                        <li>
+                          <label>
+                            <input type="checkbox" class="identity-check" />
+                            <span class="identity-label"></span>A Storyteller
+                            <span class="checkmark-border"></span>
+                          </label>
                         </li>
-                        <li class="bg-white">
-                          <label
-                            >SEO
-                            <input type="radio" name="web_service" value="SEO"
-                          /></label>
+                        <li>
+                          <label>
+                            <input type="checkbox" class="identity-check" />
+                            <span class="identity-label"></span>A Problem-Solver
+                            <span class="checkmark-border"></span>
+                          </label>
+                        </li>
+                        <li>
+                          <label>
+                            <input type="checkbox" class="identity-check" />
+                            <span class="identity-label"></span>A Leader
+                            <span class="checkmark-border"></span>
+                          </label>
+                        </li>
+                        <li>
+                          <label>
+                            <input type="checkbox" class="identity-check" />
+                            <span class="identity-label"></span>An Agreeable
+                            Person
+                            <span class="checkmark-border"></span>
+                          </label>
                         </li>
                       </ul>
                     </div>
-                    <div
-                      class="conditional"
-                      data-condition="#condition2 && web_service == 'Web Design'"
-                    >
-                      <div class="form-inner-area">
-                        <label> <h3>Details</h3></label>
-                        <input type="text" name="web_service_detail" />
-                      </div>
-                    </div>
-                    <div class="language-select">
-                      <p>
-                        I want to browse projects in the following languages:
-                      </p>
-                      <select name="languages">
-                        <option>English</option>
-                        <option>Arabic</option>
-                        <option>Spanish</option>
-                        <option>French</option>
-                      </select>
-                    </div>
-                    <div class="comment-box">
-                      <p><i class="fas fa-comments"></i> Write Somthing note</p>
-                      <textarea
-                        name="full_comments"
-                        placeholder="Write here"
-                      ></textarea>
-                    </div>
+                  </div>
+                </div>
+                <div class="wizard-footer">
+                  <div class="wizard-imgbg">
+                    <img src="@/assets/v3.png" alt="" />
+                  </div>
+                  <div class="actions" @click="nextPage()">
+                    <ul>
+                      <li>
+                        <span class="js-btn-next" title="NEXT"
+                          >NEXT <i class="fa fa-arrow-right"></i
+                        ></span>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
-              <!-- ./inner -->
-              <div class="actions">
-                <ul>
-                  <li>
-                    <span class="js-btn-prev" title="BACK"
-                      ><i class="fa fa-arrow-left"></i> BACK
-                    </span>
-                  </li>
-                  <li>
-                    <span class="js-btn-next" title="NEXT"
-                      >NEXT <i class="fa fa-arrow-right"></i
-                    ></span>
-                  </li>
-                </ul>
-              </div>
             </div>
-          </div>
-          <!-- div 4 -->
-          <div class="multisteps-form__panel" data-animation="slideHorz">
-            <div class="wizard-forms">
-              <div class="inner pb-100 clearfix">
-                <div class="form-content pera-content">
-                  <div class="step-inner-content">
-                    <span class="step-no bottom-line">Step 4</span>
-                    <div class="step-progress float-right">
-                      <span>4 of 5 completed</span>
-                      <div class="step-progress-bar">
-                        <div class="progress">
-                          <div class="progress-bar" style="width: 70%"></div>
-                        </div>
+            <!--single form panel-->
+            <div
+              class="multisteps-form__panel"
+              data-animation="slideVert"
+              v-if="currentPage === 1"
+            >
+              <div class="inner pb-100">
+                <div class="wizard-topper">
+                  <div class="wizard-progress">
+                    <span>2 of 5 Completed</span>
+                    <div class="progress">
+                      <div class="progress-bar" style="width: 45%"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="wizard-content-item text-center">
+                  <p>What’s your favorite type of project?</p>
+                </div>
+                <div class="wizard-option-list wizard-content-form">
+                  <div class="taxable-area">
+                    <div class="row" style="margin-bottom: 40px">
+                      <div class="col-md-4">
+                        <label>
+                          <input
+                            type="checkbox"
+                            class="tax-check"
+                            value="Taxable in the US?"
+                          />
+                          <span class="checkbo-box-border"></span>
+                          <span class="texable-option">
+                            Make a diorama project
+                          </span>
+                        </label>
+                      </div>
+                      <div class="col-md-4">
+                        <label>
+                          <input
+                            type="checkbox"
+                            class="tax-check"
+                            value="Taxable in the US?"
+                          />
+                          <span class="checkbo-box-border"></span>
+                          <span class="texable-option">
+                            Write a research paper
+                          </span>
+                        </label>
+                      </div>
+                      <div class="col-md-4">
+                        <label>
+                          <input
+                            type="checkbox"
+                            class="tax-check"
+                            value="Taxable in the US?"
+                          />
+                          <span class="checkbo-box-border"></span>
+                          <span class="texable-option">
+                            Give a presentation
+                          </span>
+                        </label>
                       </div>
                     </div>
-                    <h2>What kind of services You Need</h2>
-                    <p>
-                      Tation argumentum et usu, dicit viderer evertitur te has.
-                      Eu dictas concludaturque usu, facete detracto patrioque an
-                      per, lucilius pertinacia eu vel.
-                    </p>
-                    <div class="step-content-area">
-                      <div class="budget-area">
-                        <p><i class="fas fa-dollar-sign"></i> Budget</p>
-                        <select name="budget">
-                          <option>$390 - $600</option>
-                          <option>$390 - $600</option>
-                          <option>$390 - $600</option>
-                          <option>$390 - $600</option>
-                          <option>$390 - $600</option>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <label>
+                          <input
+                            type="checkbox"
+                            class="tax-check"
+                            value="Taxable in the US?"
+                          />
+                          <span class="checkbo-box-border"></span>
+                          <span class="texable-option">
+                            Automate workflows
+                          </span>
+                        </label>
+                      </div>
+                      <div class="col-md-4">
+                        <label>
+                          <input
+                            type="checkbox"
+                            class="tax-check"
+                            value="Taxable in the US?"
+                          />
+                          <span class="checkbo-box-border"></span>
+                          <span class="texable-option">
+                            Plan a program initiative
+                          </span>
+                        </label>
+                      </div>
+                      <div class="col-md-4">
+                        <label>
+                          <input
+                            type="checkbox"
+                            class="tax-check"
+                            value="Taxable in the US?"
+                          />
+                          <span class="checkbo-box-border"></span>
+                          <span class="texable-option">
+                            Organize a discussion group
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="wizard-footer">
+                  <div class="wizard-imgbg">
+                    <img src="@/assets/v2.png" alt="" />
+                  </div>
+                  <div class="actions">
+                    <ul>
+                      <li @click="previousPage()">
+                        <span class="js-btn-prev" title="BACK"
+                          ><i class="fa fa-arrow-left"></i> BACK</span
+                        >
+                      </li>
+                      <li @click="nextPage()">
+                        <span class="js-btn-next" title="NEXT"
+                          >NEXT <i class="fa fa-arrow-right"></i
+                        ></span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--single form panel-->
+            <div
+              class="multisteps-form__panel"
+              data-animation="slideVert"
+              v-if="currentPage === 2"
+            >
+              <div class="inner pb-100">
+                <div class="wizard-topper">
+                  <div class="wizard-progress">
+                    <span>3 of 5 Completed</span>
+                    <div class="progress">
+                      <div class="progress-bar" style="width: 65%"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="wizard-content-item text-center">
+                  <p>How do you make important decisions?</p>
+                </div>
+                <div class="wizard-identity wizard-content-form">
+                  <ul>
+                    <li class="no-arrow active" style="margin-bottom: 20px">
+                      <div class="n-activity">
+                        <label>
+                          <span class="n-title"
+                            >After carefully analyzing every option and the
+                            predicted results</span
+                          >
+                          <input type="checkbox" class="net-check" />
+                          <span class="net-check-border"></span>
+                        </label>
+                      </div>
+                    </li>
+                    <li class="no-arrow active" style="margin-bottom: 20px">
+                      <div class="n-activity">
+                        <label>
+                          <span class="n-title"
+                            >After checking with friends</span
+                          >
+                          <input type="checkbox" class="net-check" />
+                          <span class="net-check-border"></span>
+                        </label>
+                      </div>
+                    </li>
+                    <li class="no-arrow active" style="margin-bottom: 20px">
+                      <div class="n-activity">
+                        <label>
+                          <span class="n-title"
+                            >I make an executive decision and everyone follows
+                            along</span
+                          >
+                          <input type="checkbox" class="net-check" />
+                          <span class="net-check-border"></span>
+                        </label>
+                      </div>
+                    </li>
+
+                    <li class="no-arrow active" style="margin-bottom: 20px">
+                      <div class="n-activity">
+                        <label>
+                          <span class="n-title"
+                            >I make an executive decision and everyone follows
+                            along</span
+                          >
+                          <input type="checkbox" class="net-check" />
+                          <span class="net-check-border"></span>
+                        </label>
+                      </div>
+                    </li>
+
+                    <li class="no-arrow active" style="margin-bottom: 20px">
+                      <div class="n-activity">
+                        <label>
+                          <span class="n-title">Gut instinct</span>
+                          <input type="checkbox" class="net-check" />
+                          <span class="net-check-border"></span>
+                        </label>
+                      </div>
+                    </li>
+
+                    <li class="no-arrow active" style="margin-bottom: 20px">
+                      <div class="n-activity">
+                        <label>
+                          <span class="n-title"
+                            >Come up with the simplest possible solution</span
+                          >
+                          <input type="checkbox" class="net-check" />
+                          <span class="net-check-border"></span>
+                        </label>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="wizard-footer">
+                  <div class="wizard-imgbg">
+                    <img src="@/assets/v3.png" alt="" />
+                  </div>
+                  <div class="actions">
+                    <ul>
+                      <li @click="previousPage()">
+                        <span class="js-btn-prev" title="BACK"
+                          ><i class="fa fa-arrow-left"></i> BACK</span
+                        >
+                      </li>
+                      <li @click="nextPage()">
+                        <span class="js-btn-next" title="NEXT"
+                          >NEXT <i class="fa fa-arrow-right"></i
+                        ></span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--single form panel-->
+            <div
+              class="multisteps-form__panel"
+              data-animation="slideVert"
+              v-if="currentPage === 3"
+            >
+              <div class="inner pb-100">
+                <div class="wizard-topper">
+                  <div class="wizard-progress">
+                    <span>4 of 5 Completed</span>
+                    <div class="progress">
+                      <div class="progress-bar" style="width: 65%"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="wizard-content-item text-center">
+                  <p>When you picture your ideal job, what are you doing?</p>
+                </div>
+                <div class="wizard-identity wizard-content-form">
+                  <ul>
+                    <li class="no-arrow active" style="margin-bottom: 20px">
+                      <div class="n-activity">
+                        <label>
+                          <span class="n-title"
+                            >Working in a fast-paced role that pushes me to
+                            produce results</span
+                          >
+                          <input type="checkbox" class="net-check" />
+                          <span class="net-check-border"></span>
+                        </label>
+                      </div>
+                    </li>
+                    <li class="no-arrow active" style="margin-bottom: 20px">
+                      <div class="n-activity">
+                        <label>
+                          <span class="n-title"
+                            >Getting creative and coming up with new ideas</span
+                          >
+                          <input type="checkbox" class="net-check" />
+                          <span class="net-check-border"></span>
+                        </label>
+                      </div>
+                    </li>
+                    <li class="no-arrow active" style="margin-bottom: 20px">
+                      <div class="n-activity">
+                        <label>
+                          <span class="n-title"
+                            >Getting creative and coming up with new ideas</span
+                          >
+                          <input type="checkbox" class="net-check" />
+                          <span class="net-check-border"></span>
+                        </label>
+                      </div>
+                    </li>
+
+                    <li class="no-arrow active" style="margin-bottom: 20px">
+                      <div class="n-activity">
+                        <label>
+                          <span class="n-title"
+                            >Figuring out how the company operates, and finding
+                            ways to do it better</span
+                          >
+                          <input type="checkbox" class="net-check" />
+                          <span class="net-check-border"></span>
+                        </label>
+                      </div>
+                    </li>
+
+                    <li class="no-arrow active" style="margin-bottom: 20px">
+                      <div class="n-activity">
+                        <label>
+                          <span class="n-title">Leading a team</span>
+                          <input type="checkbox" class="net-check" />
+                          <span class="net-check-border"></span>
+                        </label>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="wizard-footer">
+                  <div class="wizard-imgbg">
+                    <img src="@/assets/v4.png" alt="" />
+                  </div>
+                  <div class="actions">
+                    <ul>
+                      <li @click="previousPage()">
+                        <span class="js-btn-prev" title="BACK"
+                          ><i class="fa fa-arrow-left"></i> BACK</span
+                        >
+                      </li>
+                      <li @click="nextPage()">
+                        <span class="js-btn-next" title="NEXT"
+                          >NEXT <i class="fa fa-arrow-right"></i
+                        ></span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--single form panel-->
+            <div
+              class="multisteps-form__panel"
+              data-animation="slideVert"
+              v-if="currentPage === 4"
+            >
+              <div class="inner pb-100">
+                <div class="wizard-topper">
+                  <div class="wizard-progress">
+                    <span>5 of 5 Completed</span>
+                    <div class="progress">
+                      <div class="progress-bar" style="width: 100%"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="wizard-content-item text-center">
+                  <p>Share with us more about you!</p>
+                </div>
+                <div class="wizard-submit-file-content wizard-content-form">
+                  <ul>
+                    <li class="no-arrow active" style="margin-bottom: 20px">
+                      <div class="n-activity">
+                        <label>
+                          <span class="n-title"
+                            >I have mastered more than 3 programming
+                            languages</span
+                          >
+                          <input type="checkbox" class="net-check" />
+                          <span class="net-check-border"></span>
+                        </label>
+                      </div>
+                    </li>
+                    <li class="no-arrow active" style="margin-bottom: 20px">
+                      <div class="n-activity">
+                        <label>
+                          <span class="n-title"
+                            >I like working with a group, as long as I can take
+                            the lead.</span
+                          >
+                          <input type="checkbox" class="net-check" />
+                          <span class="net-check-border"></span>
+                        </label>
+                      </div>
+                    </li>
+                    <li class="no-arrow active" style="margin-bottom: 20px">
+                      <div class="n-activity">
+                        <label>
+                          <span class="n-title"
+                            >I value more of chance of improvements than
+                            rewards.</span
+                          >
+                          <input type="checkbox" class="net-check" />
+                          <span class="net-check-border"></span>
+                        </label>
+                      </div>
+                    </li>
+                  </ul>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="n-select-option">
+                        <select>
+                          <option>
+                            Which of these is your strongest skill?
+                          </option>
+                          <option>Stroytelling</option>
+                          <option>Logical Thinking</option>
+                          <option>Creativity</option>
+                          <option>Troubleshooting</option>
+                          <option>Math & Statistics</option>
                         </select>
                       </div>
-                      <div class="budget-area">
-                        <p><i class="fas fa-comments"></i> Required Support</p>
-                        <select name="support_period">
-                          <option>2 to 6 month</option>
-                          <option>2 to 6 month</option>
-                          <option>2 to 6 month</option>
-                          <option>2 to 6 month</option>
-                          <option>2 to 6 month</option>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="n-select-option">
+                        <select>
+                          <option>Working Experience</option>
+                          <option>Less than 1 Year</option>
+                          <option>1-3 Year</option>
+                          <option>3-5 Year</option>
+                          <option>5 Year plus</option>
                         </select>
                       </div>
-                      <div class="budget-area">
-                        <p>Optimization and Accessibility</p>
-                        <div class="opti-list">
-                          <ul class="d-flex">
-                            <li class="bg-white active">
-                              <input
-                                type="checkbox"
-                                name="code_opti1"
-                                value="Semantic coding"
-                                checked=""
-                              />Semantic coding
-                            </li>
-                            <li class="bg-white">
-                              <input
-                                type="checkbox"
-                                name="code_opti2"
-                                value="Mobile APP"
-                              />Mobile APP
-                            </li>
-                            <li class="bg-white">
-                              <input
-                                type="checkbox"
-                                name="code_opti3"
-                                value="Mobile Design"
-                              />Mobile Design
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="comment-box">
-                        <p>
-                          <i class="fas fa-comments"></i> Write Somthing note
-                        </p>
-                        <textarea
-                          name="comments-note"
-                          placeholder="Your Content Here"
-                        ></textarea>
-                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <!-- /.inner -->
-              <div class="actions">
-                <ul>
-                  <li>
-                    <span class="js-btn-prev" title="BACK"
-                      ><i class="fa fa-arrow-left"></i> BACK
-                    </span>
-                  </li>
-                  <li>
-                    <span class="js-btn-next" title="NEXT"
-                      >NEXT <i class="fa fa-arrow-right"></i
-                    ></span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <!-- div 5 -->
-          <div class="multisteps-form__panel" data-animation="slideHorz">
-            <div class="wizard-forms">
-              <div class="inner pb-100 clearfix">
-                <div class="form-content pera-content">
-                  <div class="step-inner-content">
-                    <span class="step-no bottom-line">Step 5</span>
-                    <div class="step-progress float-right">
-                      <span>5 of 5 completed</span>
-                      <div class="step-progress-bar">
-                        <div class="progress">
-                          <div class="progress-bar" style="width: 100%"></div>
-                        </div>
-                      </div>
-                    </div>
-                    <h2>Complete Final Step</h2>
-                    <p>
-                      Tation argumentum et usu, dicit viderer evertitur te has.
-                      Eu dictas concludaturque usu, facete detracto patrioque an
-                      per, lucilius pertinacia eu vel.
-                    </p>
-                    <div class="step-content-field">
-                      <div class="date-picker date datepicker">
-                        <input type="text" name="date" class="form-control" />
-                        <div class="input-group-append">
-                          <span>ADD TIME</span>
-                        </div>
-                      </div>
-                      <div class="plan-area">
-                        <div class="plan-icon-text text-center active">
-                          <div class="plan-icon">
-                            <i class="fas fa-chess-queen"></i>
-                          </div>
-                          <div class="plan-text">
-                            <h3>Unlimited Plan</h3>
-                            <p>
-                              Tation argumentum et usu, dicit viderer evertitur
-                              te has. Eu dictas concludaturque usu, dicit
-                              viderer evertitur
-                            </p>
-                            <input
-                              type="radio"
-                              name="your_plan"
-                              value="Unlimited Plan"
-                              checked=""
-                            />
-                          </div>
-                        </div>
-                        <div class="plan-icon-text text-center">
-                          <div class="plan-icon">
-                            <i class="fas fa-cubes"></i>
-                          </div>
-                          <div class="plan-text">
-                            <h3>Limited Plan</h3>
-                            <p>
-                              Tation argumentum et usu, dicit viderer evertitur
-                              te has. Eu dictas concludaturque usu, dicit
-                              viderer evertitur
-                            </p>
-                            <input
-                              type="radio"
-                              name="your_plan"
-                              value="Unlimited Plan"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div class="budget-area">
-                        <p>Optimization and Accessibility</p>
-                        <div class="opti-list">
-                          <ul class="d-flex">
-                            <li class="bg-white active">
-                              <input
-                                type="checkbox"
-                                name="code_opti1"
-                                value="Semantic coding"
-                                checked=""
-                              />Semantic coding
-                            </li>
-                            <li class="bg-white">
-                              <input
-                                type="checkbox"
-                                name="code_opti2"
-                                value="Mobile APP"
-                              />Mobile APP
-                            </li>
-                            <li class="bg-white">
-                              <input
-                                type="checkbox"
-                                name="code_opti3"
-                                value="Mobile Design"
-                              />Mobile Design
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="comment-box">
-                        <textarea
-                          name="extra-message"
-                          placeholder="Some Note"
-                        ></textarea>
-                      </div>
-                    </div>
+
+                <div class="wizard-footer">
+                  <div class="wizard-imgbg float-left">
+                    <img src="@/assets/v5.png" alt="" />
+                  </div>
+                  <div class="actions">
+                    <ul>
+                      <li>
+                        <span class="js-btn-prev" title="BACK"
+                          ><i class="fa fa-arrow-left"></i> BACK</span
+                        >
+                      </li>
+                      <li>
+                        <button type="submit" id="submit-form" title="NEXT">
+                          SUMBIT <i class="fa fa-arrow-right"></i>
+                        </button>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
-              <!-- /.inner -->
-              <div class="actions">
-                <ul>
-                  <li>
-                    <span class="js-btn-prev" title="BACK"
-                      ><i class="fa fa-arrow-left"></i> BACK
-                    </span>
-                  </li>
-                  <li>
-                    <button type="submit" title="NEXT">
-                      SUBMIT <i class="fa fa-arrow-right"></i>
-                    </button>
-                  </li>
-                </ul>
-              </div>
             </div>
-          </div>
+          </form>
         </div>
-      </form>
+      </div>
     </div>
   </div>
 </template>
-
 <script>
+import $ from "jquery";
+$("#files").change(function () {
+  var filename = this.files[0].name;
+  console.log(filename);
+});
+$(function () {
+  $(".wizard > .steps li a").click(function () {
+    $(this).parent().addClass("checked");
+    $(this).parent().prevAll().addClass("checked");
+    $(this).parent().nextAll().removeClass("checked");
+  });
+  $(":checkbox").on("click", function () {
+    $(this).parent().parent().toggleClass("checked");
+  });
+  // Custome Jquery Step Button
+  $(".forward").click(function () {
+    $("#wizard").steps("next");
+  });
+  $(".backward").click(function () {
+    $("#wizard").steps("previous");
+  });
+  // Select Dropdown
+  $("html").click(function () {
+    $(".select .dropdown").hide();
+  });
+  $(".select").click(function (event) {
+    event.stopPropagation();
+  });
+  $(".select .select-control").click(function () {
+    $(this).parent().next().toggle();
+  });
+  $(".select .dropdown li").click(function () {
+    $(this).parent().toggle();
+    var text = $(this).attr("rel");
+    $(this).parent().prev().find("div").text(text);
+  });
+
+  $(".wizard-option-list ul li ").click(function () {
+    $(".wizard-option-list ul li").removeClass("active");
+    $(this).addClass("active");
+  });
+  $(".texable-option ").click(function () {
+    $(".texable-option").removeClass("active");
+    $(this).addClass("active");
+  });
+
+  updateContainer();
+  $(window).resize(function () {
+    updateContainer();
+  });
+});
+
+function updateContainer() {
+  //multi form ===================================
+  //DOM elements
+  const DOMstrings = {
+    stepsBtnClass: "multisteps-form__progress-btn",
+    stepsBtns: document.querySelectorAll(`.multisteps-form__progress-btn`),
+    stepsBar: document.querySelector(".multisteps-form__progress"),
+    stepsForm: document.querySelector(".multisteps-form__form"),
+    stepFormPanelClass: "multisteps-form__panel",
+    stepFormPanels: document.querySelectorAll(".multisteps-form__panel"),
+    stepPrevBtnClass: "js-btn-prev",
+    stepNextBtnClass: "js-btn-next",
+  };
+
+  //remove class from a set of items
+  const removeClasses = (elemSet, className) => {
+    elemSet.forEach((elem) => {
+      elem.classList.remove(className);
+    });
+  };
+
+  //return exect parent node of the element
+  const findParent = (elem, parentClass) => {
+    let currentNode = elem;
+    console.log(currentNode.classList);
+    console.log(parentClass);
+    return currentNode;
+  };
+
+  //get active button step number
+  const getActiveStep = (elem) => {
+    return Array.from(DOMstrings.stepsBtns).indexOf(elem);
+  };
+
+  //set all steps before clicked (and clicked too) to active
+  const setActiveStep = (activeStepNum) => {
+    //remove active state from all the state
+    removeClasses(DOMstrings.stepsBtns, "js-active");
+
+    //set picked items to active
+    DOMstrings.stepsBtns.forEach((elem, index) => {
+      if (index <= activeStepNum) {
+        elem.classList.add("js-active");
+      }
+    });
+  };
+
+  //get active panel
+  const getActivePanel = () => {
+    let activePanel;
+
+    DOMstrings.stepFormPanels.forEach((elem) => {
+      if (elem.classList.contains("js-active")) {
+        activePanel = elem;
+      }
+    });
+
+    return activePanel;
+  };
+
+  //open active panel (and close unactive panels)
+  const setActivePanel = (activePanelNum) => {
+    const animation = $(DOMstrings.stepFormPanels, "js-active").attr(
+      "data-animation"
+    );
+
+    //remove active class from all the panels
+    removeClasses(DOMstrings.stepFormPanels, "js-active");
+    removeClasses(DOMstrings.stepFormPanels, animation);
+    removeClasses(DOMstrings.stepFormPanels, "animate__animated");
+
+    //show active panel
+    DOMstrings.stepFormPanels.forEach((elem, index) => {
+      if (index === activePanelNum) {
+        elem.classList.add("js-active");
+        // stepFormPanels
+        elem.classList.add("animate__animated", animation);
+
+        setTimeout(function () {
+          removeClasses(
+            DOMstrings.stepFormPanels,
+            "animate__animated",
+            animation
+          );
+        }, 1200);
+
+        setFormHeight(elem);
+      }
+    });
+  };
+
+  //set form height equal to current panel height
+  const formHeight = (activePanel) => {
+    const activePanelHeight = activePanel.offsetHeight;
+
+    DOMstrings.stepsForm.style.height = `${activePanelHeight}px`;
+  };
+
+  const setFormHeight = () => {
+    const activePanel = getActivePanel();
+
+    formHeight(activePanel);
+  };
+
+  //STEPS BAR CLICK FUNCTION
+  DOMstrings.stepsBar.addEventListener("click", (e) => {
+    //check if click target is a step button
+    const eventTarget = e.target;
+
+    if (!eventTarget.classList.contains(`${DOMstrings.stepsBtnClass}`)) {
+      return;
+    }
+
+    //get active button step number
+    const activeStep = getActiveStep(eventTarget);
+
+    //set all steps before clicked (and clicked too) to active
+    setActiveStep(activeStep);
+
+    //open active panel
+    setActivePanel(activeStep);
+  });
+
+  //PREV/NEXT BTNS CLICK
+  DOMstrings.stepsForm.addEventListener("click", (e) => {
+    const eventTarget = e.target;
+
+    //check if we clicked on `PREV` or NEXT` buttons
+    if (
+      !(
+        eventTarget.classList.contains(`${DOMstrings.stepPrevBtnClass}`) ||
+        eventTarget.classList.contains(`${DOMstrings.stepNextBtnClass}`)
+      )
+    ) {
+      return;
+    }
+
+    //find active panel
+    const activePanel = findParent(
+      eventTarget,
+      `${DOMstrings.stepFormPanelClass}`
+    );
+
+    let activePanelNum = Array.from(DOMstrings.stepFormPanels).indexOf(
+      activePanel
+    );
+
+    //set active step and active panel onclick
+    if (eventTarget.classList.contains(`${DOMstrings.stepPrevBtnClass}`)) {
+      activePanelNum--;
+    } else {
+      activePanelNum++;
+    }
+
+    setActiveStep(activePanelNum);
+    setActivePanel(activePanelNum);
+  });
+
+  //SETTING PROPER FORM HEIGHT ONLOAD
+  window.addEventListener("load", setFormHeight, true);
+
+  //SETTING PROPER FORM HEIGHT ONRESIZE
+  window.addEventListener("resize", setFormHeight, true);
+}
+
 export default {
   name: "QuestionaireView",
   data() {

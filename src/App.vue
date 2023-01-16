@@ -21,8 +21,8 @@
 @import "~bootstrap/dist/css/stroke.css";
 @import "~bootstrap/dist/css/animate1.css";
 @import "~bootstrap/dist/css/fontawesome-all.css";
-@import "~bootstrap/dist/css/style5.css";
-@import "~bootstrap/dist/css/switch.css";
+@import "~bootstrap/dist/css/style8.css";
+@import "~bootstrap/dist/css/switch1.css";
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
