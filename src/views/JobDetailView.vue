@@ -65,6 +65,7 @@
       </div>
 
       <div class="bd-content col-md-9 col-xl-8 col-12 pb-md-3 pl-md-5">
+        <h2 style="text-align: left">Software Engineer</h2>
         <div class="clearfix d-block"></div>
         <main class="bd-main bd-components">
           <b-card-group deck>
