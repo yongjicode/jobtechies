@@ -1,7 +1,7 @@
 <template>
   <div>
     <h3 style="text-align: center">Generate Resume</h3>
-    <div class="wrapper p-5">
+    <div class="wrapper p-3">
       <div class="c-left">
         <div
           @click="onSetCategory('personal')"
@@ -63,7 +63,7 @@
           style="display: flex; flex-direction: column; align-items: flex-start"
           @submit.prevent="onSubmit"
         >
-          <div style="height: 480px; width: 100%">
+          <div style="height: 420px; width: 100%">
             <div class="c-outer" v-if="selectedCategory == 'personal'">
               <h4 style="text-align: left">Personal Details</h4>
               <div class="left mb-3 c-container">
@@ -612,7 +612,7 @@ export default {
   width: 30%;
   padding: 40px;
   border-radius: 20px;
-  height: 400px;
+  height: max-content;
   background-color: #f5f5f5;
 }
 .c-item {
