@@ -76,6 +76,9 @@ export default {
   height: 50px;
   margin: 0 auto;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .c-ai {

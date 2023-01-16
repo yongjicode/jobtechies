@@ -10,7 +10,6 @@
       <div class="nav-center">
         <router-link to="/discover">Discover</router-link>
         <router-link to="/explore">Explore</router-link>
-        <router-link to="/mentor">Mentor</router-link>
         <router-link to="/resume">Resume</router-link>
       </div>
       <div class="nav-right">
