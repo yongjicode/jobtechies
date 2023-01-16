@@ -36,7 +36,7 @@ export default {
   methods: {
     navigateToDetails() {
       // Perform any additional logic before navigating
-      this.$router.push("/discover/job/");
+      this.$router.push("/discover/job/description");
     },
   },
 };

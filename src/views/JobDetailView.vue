@@ -5,39 +5,59 @@
         <nav
           id="bd-docs-nav"
           aria-label="Main navigation"
-          class="bd-links d-none d-md-block"
+          class="c-left bd-links d-none d-md-block"
         >
           <div class="bd-toc-item active">
             <ul class="nav bd-sidenav">
               <li class="b-nav-item">
-                <b-nav-item
+                <div
+                  :class="{
+                    'c-item': !showJobDescription,
+                    'c-item-active': showJobDescription,
+                  }"
                   to="/discover/job/description"
                   @click="JobDescription()"
                   exact
                   exact-active-class="active"
-                  >Description</b-nav-item
                 >
-                <b-nav-item
+                  Description
+                </div>
+                <div
+                  :class="{
+                    'c-item': !showJobPath,
+                    'c-item-active': showJobPath,
+                  }"
                   to="/discover/job/path"
                   @click="JobPath()"
                   exact
                   exact-active-class="active"
-                  >Career Paths</b-nav-item
                 >
-                <b-nav-item
+                  Career Paths
+                </div>
+                <div
+                  :class="{
+                    'c-item': !showJobSkill,
+                    'c-item-active': showJobSkill,
+                  }"
                   to="/discover/job/skill"
                   @click="JobSkill()"
                   exact
                   exact-active-class="active"
-                  >Skills Required</b-nav-item
                 >
-                <b-nav-item
+                  Skills Required
+                </div>
+                <div
+                  :class="{
+                    'c-item': !showJobListing,
+                    'c-item-active': showJobListing,
+                  }"
                   to="/discover/job/listing"
                   @click="JobListing()"
                   exact
                   exact-active-class="active"
-                  >Job Listing</b-nav-item
                 >
+                  Job Listing
+                </div>
               </li>
             </ul>
           </div>
@@ -91,37 +111,59 @@ export default {
   created() {},
   methods: {
     JobDescription() {
-      if (this.$route.path == "/discover/job/description") {
-        this.showJobDescription = true;
-        this.showJobPath = false;
-        this.showJobSkill = false;
-        this.showJobListing = false;
-      }
+      this.showJobDescription = true;
+      this.showJobPath = false;
+      this.showJobSkill = false;
+      this.showJobListing = false;
     },
     JobPath() {
-      if (this.$route.path == "/discover/job/path") {
-        this.showJobDescription = false;
-        this.showJobPath = true;
-        this.showJobSkill = false;
-        this.showJobListing = false;
-      }
+      this.showJobDescription = false;
+      this.showJobPath = true;
+      this.showJobSkill = false;
+      this.showJobListing = false;
     },
     JobSkill() {
-      if (this.$route.path == "/discover/job/skill") {
-        this.showJobDescription = false;
-        this.showJobPath = false;
-        this.showJobSkill = true;
-        this.showJobListing = false;
-      }
+      this.showJobDescription = false;
+      this.showJobPath = false;
+      this.showJobSkill = true;
+      this.showJobListing = false;
     },
     JobListing() {
-      if (this.$route.path == "/discover/job/listing") {
-        this.showJobDescription = false;
-        this.showJobPath = false;
-        this.showJobSkill = false;
-        this.showJobListing = true;
-      }
+      this.showJobDescription = false;
+      this.showJobPath = false;
+      this.showJobSkill = false;
+      this.showJobListing = true;
     },
   },
 };
 </script>
+
+<style scoped>
+.c-left {
+  background-color: aliceblue;
+  border-radius: 20px;
+  width: max-content;
+}
+
+.c-item {
+  border-radius: 40px;
+  height: 30px;
+  width: 200px;
+  padding-left: 15px;
+  padding-top: 5px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.c-item-active {
+  border-radius: 40px;
+  height: 30px;
+  width: 200px;
+  padding-left: 15px;
+  padding-top: 5px;
+  text-align: left;
+  cursor: pointer;
+  background-color: #fb770d;
+  color: white;
+}
+</style>

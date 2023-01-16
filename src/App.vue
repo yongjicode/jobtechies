@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <nav v-if="!$route.meta.hideNavbar">
-      <router-link to="/landing">Landing</router-link>
       <router-link to="/discover">Discover</router-link>
       <router-link to="/explore">Explore</router-link>
       <router-link to="/mentor">Mentor</router-link>
