@@ -180,7 +180,7 @@
                 </b-col>
               </b-row>
               <b-row>
-                <b-col sm="3">
+                <b-col sm="5">
                   <b-form-group
                     label="Start Date"
                     label-for="startDate"
@@ -195,7 +195,7 @@
                     />
                   </b-form-group>
                 </b-col>
-                <b-col sm="3">
+                <b-col sm="5">
                   <b-form-group
                     label="End Date "
                     label-for="endDate"
@@ -261,7 +261,7 @@
               </b-row>
 
               <b-row>
-                <b-col sm="3">
+                <b-col sm="5">
                   <b-form-group
                     label="Start Date"
                     label-for="startDate"
@@ -275,7 +275,7 @@
                     />
                   </b-form-group>
                 </b-col>
-                <b-col sm="3">
+                <b-col sm="5">
                   <b-form-group
                     label="End Date "
                     label-for="endDate"
@@ -340,7 +340,7 @@
                 </b-col>
               </b-row>
               <b-row>
-                <b-col sm="3">
+                <b-col sm="5">
                   <b-form-group
                     label="Start Date"
                     label-for="startDate"
@@ -354,7 +354,7 @@
                     />
                   </b-form-group>
                 </b-col>
-                <b-col sm="3">
+                <b-col sm="5">
                   <b-form-group
                     label="End Date "
                     label-for="endDate"
@@ -403,7 +403,7 @@
                     />
                   </b-form-group>
                 </b-col>
-                <b-col sm="3">
+                <b-col sm="5">
                   <b-form-group
                     label="Start Date"
                     label-for="startDate"
@@ -417,7 +417,7 @@
                     />
                   </b-form-group>
                 </b-col>
-                <b-col sm="3">
+                <b-col sm="5">
                   <b-form-group
                     label="End Date "
                     label-for="endDate"
