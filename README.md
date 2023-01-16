@@ -14,7 +14,7 @@
 - [Contributors](#contributors)
 
 <a name="introduction"></a> 
-## Introduction {#introduction-id}
+## Introduction 
 For this hackathon, we chose to tackle problem statement 3 under the CSIT track.
 The problem we have identified is that in our modern job landscape, the lifecycle for tech jobs are getting shorter, and information on the available tech jobs isn’t readily available.
 
