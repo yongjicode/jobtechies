@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3 style="text-align: center">Generate Resume</h3>
+    <h3 style="text-align: center">Resume Enhancer</h3>
     <div class="wrapper p-3">
       <div class="c-left">
         <div
