@@ -613,7 +613,7 @@ export default {
   padding: 40px;
   border-radius: 20px;
   height: 400px;
-  background-color: aliceblue;
+  background-color: #f5f5f5;
 }
 .c-item {
   border-radius: 40px;
@@ -637,7 +637,7 @@ export default {
 }
 .c-container {
   width: 70%;
-  background-color: aliceblue;
+  background-color: #f5f5f5;
   border-radius: 10px;
   padding-left: 50px;
   padding-right: 50px;

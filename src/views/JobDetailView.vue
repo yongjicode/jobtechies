@@ -141,7 +141,7 @@ export default {
 
 <style scoped>
 .c-left {
-  background-color: aliceblue;
+  background-color: #f5f5f5;
   border-radius: 20px;
   width: max-content;
 }
