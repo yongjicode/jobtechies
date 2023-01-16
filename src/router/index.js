@@ -1,6 +1,5 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-//import LandingView from "../views/LandingView.vue";
 
 Vue.use(VueRouter);
 
@@ -11,7 +10,7 @@ const routes = [
   //   component: HomeView,
   // },
   {
-    path: "/landing",
+    path: "/",
     name: "landing",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
@@ -21,6 +20,15 @@ const routes = [
     meta: {
       hideNavbar: true,
     },
+  },
+  {
+    path: "/questionaire",
+    name: "questionaire",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/QuestionaireView.vue"),
   },
   {
     path: "/signin",
@@ -39,6 +47,15 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/DiscoverView.vue"),
+  },
+  {
+    path: "/discover/job/*",
+    name: "discover.job",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/JobDetailView.vue"),
   },
   {
     path: "/explore",
