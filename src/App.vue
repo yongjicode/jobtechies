@@ -1,10 +1,21 @@
 <template>
   <div id="app">
-    <nav v-if="!$route.meta.hideNavbar">
-      <router-link to="/discover">Discover</router-link>
-      <router-link to="/explore">Explore</router-link>
-      <router-link to="/mentor">Mentor</router-link>
-      <router-link to="/resume">Resume</router-link>
+    <nav
+      style="width: 100%; display: flex; justify-content: space-between"
+      v-if="!$route.meta.hideNavbar"
+    >
+      <div class="nav-left">
+        <img style="height: 30px" src="./assets/brand.png" />
+      </div>
+      <div class="nav-center">
+        <router-link to="/discover">Discover</router-link>
+        <router-link to="/explore">Explore</router-link>
+        <router-link to="/mentor">Mentor</router-link>
+        <router-link to="/resume">Resume</router-link>
+      </div>
+      <div class="nav-right">
+        <router-link to="/">Logout</router-link>
+      </div>
     </nav>
     <div>
       <router-view style="max-width: 100%" />

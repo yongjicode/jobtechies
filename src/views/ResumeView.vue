@@ -519,11 +519,26 @@ export default {
         " - ",
         this.volunteerEndDate
       );
-      // logic to submit form data
+      for (var key in this.formData) {
+        for (var key2 in this.formData[key]) {
+          if (key2 == "one") {
+            this.formData[key][1] = this.formData[key][key2];
+          } else if (key2 == "two") {
+            this.formData[key][2] = this.formData[key][key2];
+          } else if (key2 == "three") {
+            this.formData[key][3] = this.formData[key][key2];
+          } else if (key2 == "four") {
+            this.formData[key][4] = this.formData[key][key2];
+          } else if (key2 == "five") {
+            this.formData[key][5] = this.formData[key][key2];
+          }
+        }
+      }
     },
-    onSetCategory(category) {
-      this.selectedCategory = category;
-    },
+    // logic to submit form data
+  },
+  onSetCategory(category) {
+    this.selectedCategory = category;
   },
 };
 </script>
