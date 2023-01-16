@@ -57,7 +57,10 @@
       </div>
     </div>
     <b-container>
-      <b-form @submit.prevent="onSubmit">
+      <b-form
+        style="display: flex; flex-direction: column; align-items: flex-start"
+        @submit.prevent="onSubmit"
+      >
         <div
           v-if="selectedCategory == 'personal'"
           class="left mb-3 c-container"
@@ -473,14 +476,28 @@
             />
           </b-form-group>
         </div>
-
-        <b-form-group>
-          <router-link to="/discover">
-            <b-button type="submit" variant="warning" style="float: right"
-              >Confirm</b-button
-            >
-          </router-link>
-        </b-form-group>
+        <div style="display: flex; gap: 10">
+          <b-button
+            v-if="selectedCategory == 'skills'"
+            type="submit"
+            variant="warning"
+            style="float: right"
+            >Confirm</b-button
+          >
+          <b-button
+            v-if="selectedCategory != 'skills'"
+            @click="goPrev"
+            variant="warning"
+            style="margin-right: 10px"
+            >Prev</b-button
+          >
+          <b-button
+            v-if="selectedCategory != 'skills'"
+            @click="goNext"
+            variant="warning"
+            >Next</b-button
+          >
+        </div>
       </b-form>
     </b-container>
   </div>
@@ -507,6 +524,14 @@ export default {
         skills: { one: "", two: "", three: "" },
       },
       selectedCategory: "personal",
+      categories: [
+        "personal",
+        "education",
+        "experience",
+        "cca",
+        "volunteer",
+        "skills",
+      ],
     };
   },
   methods: {
@@ -520,6 +545,23 @@ export default {
         this.volunteerEndDate
       );
       // logic to submit form data
+    },
+    goPrev() {
+      for (let i = 0; i < this.categories.length; i++) {
+        if (this.categories[i] == this.selectedCategory) {
+          this.selectedCategory = this.categories[i - 1];
+          break;
+        }
+      }
+    },
+    goNext() {
+      console.log("hello");
+      for (let i = 0; i < this.categories.length; i++) {
+        if (this.categories[i] == this.selectedCategory) {
+          this.selectedCategory = this.categories[i + 1];
+          break;
+        }
+      }
     },
     onSetCategory(category) {
       this.selectedCategory = category;
@@ -580,7 +622,7 @@ export default {
 }
 
 .color-box {
-  background-color: #fff6ef;
+  background-color: white;
   border: 0px;
 }
 </style>
