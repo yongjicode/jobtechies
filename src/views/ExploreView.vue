@@ -1,5 +1,6 @@
 <template>
   <div class="wrapper">
+    <h3>Chart your career path</h3>
     <div class="image-container">
       <div
         @click="setCurrentTrack(track.name)"
@@ -12,6 +13,7 @@
       </div>
     </div>
     <div class="screenshot-container">
+      <h5>PATHWAYS for {{ this.currentTrack }}</h5>
       <img v-if="currentTrack == 'DATA & AI'" src="../assets/aiss.jpg" />
       <img
         v-if="currentTrack == 'INFRASTRUCTURE'"
