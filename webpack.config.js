@@ -4,6 +4,13 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(csv|xlsx|xls|docx)$/,
+        loader: "file-loader",
+        options: {
+          name: `files/[name].[ext]`,
+        },
+      },
+      {
         test: /\.vue$/,
         loader: "vue-loader",
         options: {
