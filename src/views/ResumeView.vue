@@ -519,6 +519,25 @@ export default {
         " - ",
         this.volunteerEndDate
       );
+      for (var key in this.formData) {
+        for (var key2 in this.formData[key]) {
+          if (key2 == "one") {
+            this.formData[key][1] = this.formData[key][key2];
+          } else if (key2 == "two") {
+            this.formData[key][1] = this.formData[key][key2];
+          } else if (key2 == "three") {
+            this.formData[key][1] = this.formData[key][key2];
+          } else if (key2 == "one") {
+            this.formData[key][1] = this.formData[key][key2];
+          } else if (key2 == "one") {
+            this.formData[key][1] = this.formData[key][key2];
+          } else if (key2 == "one") {
+            this.formData[key][1] = this.formData[key][key2];
+          } else if (key2 == "one") {
+            this.formData[key][1] = this.formData[key][key2];
+          }
+        }
+      }
       // logic to submit form data
     },
     onSetCategory(category) {
