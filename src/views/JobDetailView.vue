@@ -1,47 +1,70 @@
 <template>
-  <div>
-    <b-card-group deck>
-      <b-card style="max-width: 20%">
-        <b-nav vertical align="center">
-          <!-- <b-nav-item>'s with child routes. Note the trailing slash on the first <b-nav-item> -->
-          <b-nav-item
-            to="/discover/job/description"
-            @click="JobDescription()"
-            exact
-            exact-active-class="active"
-            >Description</b-nav-item
-          >
-          <b-nav-item
-            to="/discover/job/path"
-            @click="JobPath()"
-            exact
-            exact-active-class="active"
-            >Career Paths</b-nav-item
-          >
-          <b-nav-item
-            to="/discover/job/skill"
-            @click="JobSkill()"
-            exact
-            exact-active-class="active"
-            >Skills</b-nav-item
-          >
-          <b-nav-item
-            to="/discover/job/listing"
-            @click="JobListing()"
-            exact
-            exact-active-class="active"
-            >Listing</b-nav-item
-          >
-        </b-nav>
-      </b-card>
+  <div class="container-fluid">
+    <div class="row flex-xl-nowrap2">
+      <div class="bd-sidebar border-bottom-0 col-md-3 col-xl-2 col-12">
+        <nav
+          id="bd-docs-nav"
+          aria-label="Main navigation"
+          class="bd-links d-none d-md-block"
+        >
+          <div class="bd-toc-item active">
+            <ul class="nav bd-sidenav">
+              <li class="b-nav-item">
+                <b-nav-item
+                  to="/discover/job/description"
+                  @click="JobDescription()"
+                  exact
+                  exact-active-class="active"
+                  >Description</b-nav-item
+                >
+                <b-nav-item
+                  to="/discover/job/path"
+                  @click="JobPath()"
+                  exact
+                  exact-active-class="active"
+                  >Career Paths</b-nav-item
+                >
+                <b-nav-item
+                  to="/discover/job/skill"
+                  @click="JobSkill()"
+                  exact
+                  exact-active-class="active"
+                  >Skills Required</b-nav-item
+                >
+                <b-nav-item
+                  to="/discover/job/listing"
+                  @click="JobListing()"
+                  exact
+                  exact-active-class="active"
+                  >Job Listing</b-nav-item
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
 
-      <b-card>
-        <JobDescription v-if="showJobDescription"></JobDescription>
-        <JobPath v-if="showJobPath"></JobPath>
-        <JobSkill v-if="showJobSkill"></JobSkill>
-        <JobListing v-if="showJobListing"></JobListing>
-      </b-card>
-    </b-card-group>
+      <div class="bd-content col-md-9 col-xl-8 col-12 pb-md-3 pl-md-5">
+        <div class="clearfix d-block"></div>
+        <main class="bd-main bd-components">
+          <b-card-group deck>
+            <b-card>
+              <JobDescription
+                v-if="showJobDescription"
+                type="Software Engineer"
+                align="left"
+              ></JobDescription>
+              <JobPath v-if="showJobPath" type="Software Engineer"></JobPath>
+              <JobSkill v-if="showJobSkill" type="Software Engineer"></JobSkill>
+              <JobListing
+                v-if="showJobListing"
+                type="Software Engineer"
+              ></JobListing>
+            </b-card>
+          </b-card-group>
+        </main>
+      </div>
+    </div>
   </div>
 </template>
 
