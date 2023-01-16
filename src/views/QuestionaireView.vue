@@ -24,6 +24,11 @@
       </button>
       <p>Page {{ currentPage + 1 }} of {{ questions.length }}</p>
     </div>
+    <div>
+      <router-link to="/uploadorgenerate">
+        <button>Submit</button>
+      </router-link>
+    </div>
   </div>
 </template>
 
