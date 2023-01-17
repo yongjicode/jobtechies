@@ -512,7 +512,7 @@
               v-if="selectedCategory == 'skills'"
               type="submit"
               variant="warning"
-              @click="onSubmit()"
+              @click="onSubmit"
               >Confirm</b-button
             >
           </div>
@@ -524,6 +524,15 @@
 
 <script>
 export default {
+  mounted() {
+    console.log("mounted");
+    const fileName = localStorage.getItem("fileName");
+    if (fileName) {
+      console.log("success: ", fileName);
+      this.readFile(fileName);
+      localStorage.clear();
+    }
+  },
   data() {
     return {
       eduStartDate: "",
@@ -554,20 +563,17 @@ export default {
     };
   },
   methods: {
-    readfile(name) {
+    readFile(name) {
       window.open(`./assets/static/${name}_Resume.docx`, "_blank");
     },
-    onSubmit() {
-      (this.formData.education["three"] = this.eduStartDate),
-        " - ",
-        this.eduEndDate;
-      (this.formData.experience["three"] = this.expStartDate),
-        " - ",
-        this.expEndDate;
-      (this.formData.cca["three"] = this.ccaStartDate), " - ", this.ccaEndDate;
-      (this.formData.volunteer["two"] = this.volunteerStartDate),
-        " - ",
-        this.volunteerEndDate;
+    async onSubmit() {
+      this.formData.education["four"] =
+        this.eduStartDate + " - " + this.eduEndDate;
+      this.formData.experience["three"] =
+        this.expStartDate + " - " + this.expEndDate;
+      this.formData.cca["three"] = this.ccaStartDate + " - " + this.ccaEndDate;
+      this.formData.volunteer["two"] =
+        this.volunteerStartDate + " - " + this.volunteerEndDate;
       for (var key in this.formData) {
         for (var key2 in this.formData[key]) {
           if (key2 == "one") {
@@ -583,8 +589,10 @@ export default {
           }
         }
       }
+      var name = this.formData["info"]["1"];
       console.log(this.formData);
-      fetch("http://127.0.0.1:5000/convert", {
+      localStorage.setItem("fileName", name);
+      const res = await fetch("http://127.0.0.1:5000/convert", {
         method: "post",
         body: JSON.stringify(this.formData),
         mode: "no-cors",
@@ -592,10 +600,18 @@ export default {
           "Content-Type": "application/json",
           // 'Content-Type': 'application/x-www-form-urlencoded',
         },
-      }).then(() => {
-        //console.log("success");
-        this.readfile(this.formData["info"]["1"]);
       });
+
+      const data = await res.json();
+      console.log(data);
+
+      // .then((data) => {
+      //   console.log(name, " coming: ", data);
+      //   // setTimeout(() => {
+      //   //   this.readFile(name);
+      //   //   console.log(name, " success");
+      //   // }, 5000);
+      // });
     },
     onSetCategory(category) {
       console.log(category);
