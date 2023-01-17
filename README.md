@@ -43,10 +43,10 @@ A resume generator feature to provide a better starting point for job seekers cl
 
 Project is created with:
 
-- Vue version
+- Vue.js
 - Express
 - Flask
-- Bootstrap
+- OpenAI GPT Tree Model
 
 <a name="contributors"></a> 
 | Profile                                                                                                                                           | Name             |
