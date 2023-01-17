@@ -16,7 +16,6 @@
         <b-card-text>
           {{ current.description }}
         </b-card-text>
-        <b-button href="javascript:;" variant="primary">Go somewhere</b-button>
       </b-card-body>
     </b-card>
   </div>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3 style="text-align: center">Generate Resume</h3>
+    <h3 style="text-align: center">Job Role Details</h3>
     <div class="container-fluid">
       <div class="row flex-xl-nowrap2">
         <div class="bd-sidebar border-bottom-0 col-md-3 col-xl-2 col-12">
