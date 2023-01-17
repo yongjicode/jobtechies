@@ -546,7 +546,7 @@
                       </li>
                       <li>
                         <button type="submit" id="submit-form" title="NEXT">
-                          SUMBIT <i class="fa fa-arrow-right"></i>
+                          SUBMIT <i class="fa fa-arrow-right"></i>
                         </button>
                       </li>
                     </ul>

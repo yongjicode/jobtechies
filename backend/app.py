@@ -8,8 +8,15 @@ from docx.oxml.ns import qn
 import openai
 import requests
 import json
+import os
+from pathlib import Path
+from flask_cors import CORS
+import pprint
 
+# app = Flask(__name__)
+# CORS(app, )
 openai.api_key = "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"
+print()
 
 class SectionGenerator:
     def __init__(self):
@@ -180,15 +187,60 @@ def convert():
     ### Writing The Resume ###
 
     # resume_dict = {"user_key":{section:{qns:ans}}}
+    
+    # print(json.loads(request.data.decode('utf8'))
+    # resume_dict = {
+    #     "currentQn": {
+    #         "0": "skillsInterest",
+    #         "1": 3
+    #     },
+    #     "info": {
+    #         "1": "bye",
+    #         "2": "97365732",
+    #         "3": "nyjyongjie@gmail.com",
+    #         "4": "yong-ng@linkedin"
+    #     },
+    #     "education": {
+    #         "1": "NTU",
+    #         "2": "Business and Computing",
+    #         "3": "5.0",
+    #         "4": "100921 - 300525",
+    #         "5": "scholarship, statistics and hackathon"
+    #     },
+    #     "experience": {
+    #         "1": "ninja van",
+    #         "2": "software engineer intern",
+    #         "3": "123456",
+    #         "4": "managed task, blah blah"
+    #     },
+    #     "cca": {
+    #         "1": "basketball",
+    #         "2": "captain",
+    #         "3": "123456-1243456",
+    #         "4": "played in the interhall game blah blah"
+    #     },
+    #     "volunteer": {
+    #         "1": "willing hearts",
+    #         "2": "098765-09876",
+    #         "3": "code full frontend using vue.js"
+    #     },
+    #     "skillsInterest": {
+    #         "1": "english, chinese",
+    #         "2": "data science and machine learning",
+    #         "3": "software, coding, projects, basketball"
+    #     }
+    # }
 
-    # print(request.data)
-
-    # resume_dict = {'currentQn': {0: 'skillsInterest', 1: 3}, 'info': {1: 'hi', 2: '97365732', 3: 'nyjyongjie@gmail.com', 4: 'yong-ng@linkedin'}, 'education': {1: 'NTU', 2: 'Business and Computing', 3: '5.0', 4: '100921 - 300525', 5: 'scholarship, statistics and hackathon'}, 'experience': {1: 'ninja van', 2: 'software engineer intern', 3: '123456', 4: 'managed task, blah blah'}, 'cca': {1: 'basketball', 2: 'captain', 3: '123456-1243456', 4: 'played in the interhall game blah blah'}, 'volunteer': {1: 'willing hearts', 2: '098765-09876', 3: 'cut potatoes and vegetable'}, 'skillsInterest': {1: 'english, chinese', 2: 'data science and machine learning', 3: 'software, coding, projects, basketball'}}
     #print(request.data.decode('utf8').replace("'", '"'))
     # print(json.loads(request.data.decode('utf8')))
     #print(request.get_json().data)
-    resume_dict = json.loads(request.data.decode('utf8'))
-    
+    # resume_dict = json.loads(request.data.decode('utf8'))
+    # resume_dict = request.data.decode('utf8')
+    # print(request.data.decode('utf8'))
+
+    resume_dict = json.loads(request.data.decode('utf8').replace("'", '"'))
+    print(resume_dict)
+
     info=resume_dict["info"]
     education=resume_dict["education"]
     education["5"] = improveText(education["5"])
@@ -237,14 +289,16 @@ def convert():
     section_generator.create_skills(document, skills_interests["1"],skills_interests["2"])
     section_generator.create_hobbies(document, skills_interests["3"])
 
-    document.save(f'{resume_dict["info"]["1"]}_Resume.docx')
+    document.save(f'{str(Path(os.getcwd()).parent.absolute())}/public/assets/static/{resume_dict["info"]["1"]}_Resume.docx')
     
     # r = requests.get(url = "https://api.openai.com/v1/models", headers={'Authorization': "Bearer " + openai.api_key}) # params = PARAMS
     # print("hishfsd: ", r.json())
     # document.save(f'{user_data["info"][1]}_Resume.docx')
 
     # generate_resume(request.data)
-    return "hi"
+    # return Flask.jsonify({"hi": "there"}).headers.add('Access-Control-Allow-Origin', '*')
+    return 'hi'
+  
 
 if __name__ == "__main__":
     app.run()
