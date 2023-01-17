@@ -30,7 +30,7 @@
             @input="validatePassword"
           />
         </b-form-group>
-        <router-link to="/discover">
+        <router-link to="/questionaire">
           <button type="submit" variant="primary">Login</button>
         </router-link>
         <router-link to="/questionaire">

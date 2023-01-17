@@ -7,7 +7,9 @@
         chart your career pathways to land your dream tech job.
       </p>
       <div class="buttons">
-        <button class="button1">Get Started</button>
+        <router-link to="/explore">
+          <button class="button1">Get Started</button>
+        </router-link>
         <router-link to="/signin">
           <button class="button2" href="/login">Login</button>
         </router-link>
