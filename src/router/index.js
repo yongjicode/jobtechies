@@ -29,6 +29,9 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/QuestionaireView.vue"),
+    meta: {
+      hideNavbar: true,
+    },
   },
   {
     path: "/signin",
@@ -38,6 +41,9 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/SignInView.vue"),
+    meta: {
+      hideNavbar: true,
+    },
   },
   {
     path: "/discover",

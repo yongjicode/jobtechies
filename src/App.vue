@@ -54,4 +54,10 @@ nav a {
 nav a.router-link-exact-active {
   color: #fb770d;
 }
+
+.nav-center {
+  display: flex;
+  width: 30%;
+  justify-content: space-evenly;
+}
 </style>
